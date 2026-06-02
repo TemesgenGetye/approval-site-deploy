@@ -1048,7 +1048,7 @@ export default function AdminDashboard() {
               {tab === "reports" && (
                 <div>
                   {(() => {
-                    const grouped = {};
+                    const grouped: Record<string, any> = {};
                     reportsList.forEach((r) => {
                       const key = r.reported_id || "unknown";
                       if (!grouped[key]) grouped[key] = { reported_id: key, reports: [], profiles: r.profiles };
@@ -1086,7 +1086,7 @@ export default function AdminDashboard() {
                               </div>
 
                               <div className="mt-4 flex flex-wrap gap-2">
-                                {group.reports.map((rep, i) => (
+                                {group.reports.map((rep: any, i: number) => (
                                   <div key={rep.id} className="flex items-center gap-2 rounded-lg bg-slate-50 border border-slate-200 px-3 py-2 text-xs">
                                     <span className="font-medium text-slate-600">#{i + 1}</span>
                                     <span className="text-slate-400">|</span>
@@ -1569,7 +1569,7 @@ export default function AdminDashboard() {
                     <div>
                       <h3 className="text-sm font-bold text-slate-700 uppercase tracking-wide mb-3">Documents</h3>
                       <div className="space-y-2">
-                        {selectedDetail.document_urls.map((url, idx) => (
+                        {selectedDetail.document_urls.map((url: string, idx: number) => (
                           <a key={idx} href={url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-blue-600 hover:bg-blue-50">
                             <FileText className="h-4 w-4 shrink-0" />
                             <span className="truncate">Document {idx + 1}</span>
